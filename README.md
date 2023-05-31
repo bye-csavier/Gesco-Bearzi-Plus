@@ -6,7 +6,7 @@ Questa estensione a come obbietivo primario quello di migliorare gesco come sito
 - Medie Automatiche
 - Rimozione della sezione valutazione primaria *(quella con i voti in riga senza colori)*
 ⠀
-------------
+--
 ### Come si installa?
 
 L'installazione è molto semplice, seguite questi passaggi:
