@@ -1,13 +1,14 @@
 # Gesco Plus 0.2.1
 
 Questa estensione a come obbietivo primario quello di migliorare gesco come sito nel suo complesso, speriamo che il progetto sia mantenuto nei prossimi anni e che possa aiutare gli studenti ad interagire col sito :)
+⠀
 
-#### Funzionalita aggiunte
+## Funzionalita aggiunte
 - Medie Automatiche
 - Rimozione della sezione valutazione primaria *(quella con i voti in riga senza colori)*
 ⠀
 
-### Come si installa?
+## Come si installa?
 
 L'installazione è molto semplice, seguite questi passaggi:
 
