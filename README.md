@@ -24,9 +24,10 @@ L'installazione è molto semplice, seguite questi passaggi:
 ## Info
 
 L'estensione è stata sviluppata da:
+**Xavier De Piero** 
 
-**Xavier De Piero**
+------------
 
-*Per eventuali **consigli o report bug** potete utilizzare la sezione "Issues" di github o contattarmi in **[privato](https://www.instagram.com/csavi.er/)**
+Per eventuali **consigli o report bug** potete utilizzare la sezione "Issues" di github o contattarmi in **[privato](https://www.instagram.com/csavi.er/)**
 
 
