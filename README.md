@@ -27,6 +27,6 @@ L'estensione è stata sviluppata da:
 
 **Xavier De Piero**
 
-*Per eventuali consigli o report bug potete utilizzare sia la sezione "Issues" di github che contattarmi via mail ( xavidp05@gmail.com )*
+*Per eventuali ""consigli o report bug** potete utilizzare la sezione "Issues" di github o contattarmi in **[privato](https://www.instagram.com/csavi.er/)***
 
 
