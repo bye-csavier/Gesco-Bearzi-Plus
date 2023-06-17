@@ -1,4 +1,4 @@
-# Gesco Plus 0.2.1
+# Gesco Plus 0.2.5
 
 Questa estensione ha come obbietivo quello di migliorare gesco come sito nel suo complesso, speriamo che il progetto sia mantenuto nei prossimi anni e che possa aiutare gli studenti di tutto il bearzi :)
 ⠀
