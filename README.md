@@ -12,8 +12,8 @@ Questa estensione ha come obbietivo quello di migliorare gesco come sito nel suo
 
 L'installazione è molto semplice, seguite questi passaggi:
 
-- Installate la cartella **[gesco-plus.zip](https://github.com/bye-csavier/Gesco-Plus/archive/refs/heads/main.zip "gesco-plus.zip")**
-- Decomprimete la cartella in una posizione qualsiasi
+- Installate la cartella **[gesco-plus.zip](https://github.com/bye-csavier/Gesco-Bearzi-Plus/archive/refs/heads/main.zip "gesco-plus.zip")**
+- Decomprimete la cartella in una posizione qualsiasi 
 - Aprite la sezione *"gestisci estensioni"* sul vostro browser
 - Abilitate la modalita sviluppatore
 - Cliccate su "carica cartella decompressa" *(o simili)*
@@ -24,7 +24,7 @@ L'installazione è molto semplice, seguite questi passaggi:
 ## Info
 
 L'estensione è stata sviluppata da:
-**Xavier De Piero** 
+**[Xavier De Piero](https://instagram.com/csavi.er?igshid=MzRlODBiNWFlZA==)** 
 
 ------------
 
