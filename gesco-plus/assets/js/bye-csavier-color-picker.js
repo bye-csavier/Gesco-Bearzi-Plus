@@ -170,6 +170,7 @@ export default class ColorPicker{
         this.#generateSpectrumMap(this.#hue.input.value);
         this.#generateHueMap();
         this.#spectrumMap.canvas.style.opacity = (this.#alpha.input.value/100);
+
         this.#syncSpectrumCursor();
         this.#syncHueCursor();
 
@@ -318,8 +319,12 @@ export default class ColorPicker{
 
         let hue = this.#hue.input.value;
         
-        if(hue !== 0 && hue !== 360)
+        let hueY = rect.height - ((hue / 360) * rect.height);
+        this.#hueMapCursor.style.top = `${hueY}px`;
+        
+        /* if(hue != 0 && hue != 360)
         {
+            console.log('here')
             let hueY = rect.height - ((hue / 360) * rect.height);
             this.#hueMapCursor.style.top = `${hueY}px`;
         }
@@ -329,7 +334,7 @@ export default class ColorPicker{
         }
         else{
             this.#hueMapCursor.style.top = `0`;
-        }
+        } */
 
     }
 
@@ -401,7 +406,7 @@ export default class ColorPicker{
     #syncSliders()
     {
         let temp = this.#hex.color.toHsv();
-
+        
         this.#hue.input.value = temp.h;
         this.#hue.txt.textContent = this.#hue.input.value;
 
@@ -425,6 +430,11 @@ export default class ColorPicker{
                                     });
 
         this.#hex.input.value = this.getHexColor();
+    }
+
+    onRevealFunc(){
+        this.#syncHueCursor()
+        this.#syncSpectrumCursor();
     }
 
     //--- Get & Set ---------------------------------------------------------------------------

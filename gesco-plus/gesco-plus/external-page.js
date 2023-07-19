@@ -14,7 +14,6 @@ if (xhr.readyState === 4 && xhr.status === 200) {
         let URL = trimUrl(response);
         for(let i=0; i<links.length; i++)
         {
-            console.log(URL)
             if(normalizeText(links[i].textContent) === URL || URL.includes("gesco-plus"))
             {
                 links[i].href = "";

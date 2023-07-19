@@ -105,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function() { //? Attendiamo il car
         **/
         function openColorPicker(colorPickerElement)
         {
-            colorPickerElement.element.classList.remove("closed");    
+            colorPickerElement.element.classList.remove("closed"); 
+            colorPickerElement.picker.onRevealFunc();   
         }
 
         /** 
