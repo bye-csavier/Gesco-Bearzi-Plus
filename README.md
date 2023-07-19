@@ -18,7 +18,7 @@ L'installazione è molto semplice, seguite questi passaggi:
 - Abilitate la modalita sviluppatore
 - Cliccate su "carica cartella decompressa" *(o simili)*
 - Selezionate la cartella "gesco-plus" *(<-- importante)* 
-- fatto 👍
+- fatto 👍, **la cartella è l'estensione, non va eliminata**
 ⠀
 
 ## Sviluppatori
