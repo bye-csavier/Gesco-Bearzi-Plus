@@ -1,10 +1,15 @@
+html{
+  height: 200px;
+  width: 300px;
+}
+
 body
 {
   margin:0 0 0 0!important;
   border-radius: 5px;
 
-  height: 200px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
 
   font-family: 'Poppins', sans-serif;
   
@@ -31,20 +36,25 @@ body
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  /* text-shadow: 0 0 20em; */
-  transition: 250ms cubic-bezier(.34,1.23,.47,1.43);
+  text-shadow: 0 0 0 #ffffff00;
+
+  transition-property: color, text-shadow, letter-spacing;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(.34, 1.23, .47, 1.43);
 }
 
 .title:hover{
-  letter-spacing: 0.5vmin;
-  color: #c736e4;
+  letter-spacing: 0.7vmin;
+  color: #dc70f1;
+  font-weight: 500;
 
-  text-shadow: 0 0 5px #e456cccb;
+  text-shadow: 0 0 5px #df7dcf71,
+               0 0 10px #e782d634;
 }
 
 .credit{
   color: #c9c9c9bd;
-  margin: 1.5% 0 4% 0;
+  margin: 4.5% 0 4% 0;
   font-size: 5vmin;
   font-weight: 300;
   text-align: center;
@@ -59,10 +69,10 @@ body
   border: none;
   background: transparent;
   padding: 0;
-  margin: 6% 0 8% 0;
+  margin: 6% 0 5% 0;
   cursor: pointer;
   outline-offset: 4px;
-  transition: filter 250ms;
+  transition: filter 150ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -80,7 +90,7 @@ body
   transform: translateY(2px);
   transition:
     transform
-    600ms
+    400ms
     cubic-bezier(.3, .7, .4, 1);
 }
 
@@ -113,7 +123,7 @@ body
   transform: translateY(-4px);
   transition:
     transform
-    600ms
+    400ms
     cubic-bezier(.3, .7, .4, 1);
 }
 

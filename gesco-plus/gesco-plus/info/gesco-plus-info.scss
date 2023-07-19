@@ -1,0 +1,408 @@
+@use '../../assets/SCSS/shared-gesco-plus.scss' as *;
+
+@import url("../gesco-plus.css");
+
+
+:root{
+    --clr-primary-1: #1a1a1a;
+    --clr-primary-2: #131313;
+    --clr-primary-3: #0e0e0e;
+    --clr-primary-4: #353535;
+
+    --clr-shadow1: #201a2494;
+    --clr-shadow2: #1b141f94;
+    --clr-shadow3: #0e0b0fc9;
+    --clr-shadow4: #0b080cb0;
+
+    --clr-ntral-1: #f7f7f7;
+    --clr-ntral-2: #6e5683;
+    --clr-ntral-3: #141414;
+   
+    --clr-main-1: #8e45d3;
+    --clr-main-2: #6e38a1;
+    --clr-main-3: #b683e6;
+    --clr-main-4: #30253a;
+    
+    --clr-glow1: #caa0f140;
+    --clr-glow2: #caa0f12f;
+    --clr-glow3: #844db834;
+}
+
+//--- Welcome Text ---------------------------------------------------------------------------
+
+#welcome-title{
+
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 8cqw;
+
+    @include border-box();
+
+    h1{
+        font-size: 4.2cqw;
+        font-weight: fontWeight('bold');
+
+        margin: 2.5cqw 0 4cqw 0;
+
+        color: var(--clr-ntral-1);
+        text-decoration: underline;
+        text-decoration-color: var(--clr-main-1);
+
+        text-align: center;
+
+    }
+
+}
+
+// === PARAGRAPH ===============================================================================
+
+.paragraph-section{
+    width: 100%;
+    height: fit-content;
+
+    padding: 1cqw 4cqw;
+
+    margin: 1cqw 0 0 0;
+
+    // container-type: size;
+
+    @include border-box();
+
+    a{
+        color: var(--clr-main-3);
+        text-decoration: underline;
+
+        transition: 200ms ease-in-out;
+        &:hover{
+            color: var(--clr-main-1);
+            text-shadow: 0 0 0.5em var(--clr-glow3);
+        }
+    }
+
+    h1{
+
+        font-weight: fontWeight("large");       
+        font-size: max(30px, 4cqw + 1rem);
+
+        color: var(--clr-main-3);
+        // text-shadow: 0 0.05em 0 var(--clr-shadow1), 0 0.1em 0 var(--clr-shadow3);
+        text-shadow: 0 0.05em 0 #1a1a1a27, 0 0.05em 0 var(--clr-main-2);
+        text-align: left;
+
+        margin: 2.6cqw 0 3cqw 0;
+        
+    }
+
+    p{
+        font-weight: 400;
+                
+        font-size: max(14px, 0.9cqw + 1rem);
+
+        text-align: left;
+        
+        line-height: 1.3em;
+
+        color: var(--clr-ntral-1);
+        margin: 0 0 0 0;
+
+        & .bold{
+            font-weight: fontWeight("large");
+        }
+
+        & .highlight{
+            text-decoration: underline;
+            text-decoration-color: var(--clr-main-1);
+        }
+
+        & .lilTxt{
+            font-weight: fontWeight("small");
+            font-size: max(10px, 0.7cqw + 1rem);
+            font-style: italic;
+        }
+
+    }
+
+    ul{
+
+        width: 100%;
+
+        @include border-box();
+
+        list-style-type: none;
+        padding: 0 0 0 1.8cqw;
+
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+
+        li{
+
+            font-weight: 400;
+                
+            font-size: max(12px, 0.6cqw + 1rem);
+    
+            text-align: left;
+            
+            line-height: 1.3em;
+    
+            color: var(--clr-ntral-1);
+
+            & .bold{
+                font-weight: fontWeight("large");
+            }
+    
+            & .highlight{
+                text-decoration: underline;
+                text-decoration-color: var(--clr-main-1);
+            }
+    
+            & .lilTxt{
+                font-weight: fontWeight("small");
+                font-size: max(8px, 0.5cqw + 1rem);
+                font-style: italic;
+            }
+
+            .icon-star-fill{
+                color: var(--clr-main-1);
+                margin-right: 0.3em;
+            }
+
+        }
+
+        .extra-li{
+
+            cursor: pointer;
+
+            .icon-arrow-up{
+                transform-origin: 50% 50%;
+                align-items: center;
+                position: absolute;
+                transform: rotate(0) translateX(0.6cqw) translateY(0.3cqw);
+
+                color: var(--clr-main-1);
+
+                // transition: transform 400ms ease-in-out;
+            }
+
+            .extra-content{
+
+                height: fit-content;
+                display: block;
+                font-size: inherit;
+                font-weight: 350;
+
+                border-left: 0.2cqw solid var(--clr-main-1);
+                padding: 1cqw 2.5cqw;
+
+                margin-left: 1.2cqw;
+                margin-bottom: 1cqw;
+                margin-top: 0.4cqw;
+
+                @include border-box();
+
+                container-type: inline-size;
+
+            }
+/* 
+            .icon-star-fill{
+                transform-origin: 50% 50%;
+                rotate: 0deg;
+                scale: 1;
+                transition: rotate  350ms ease-in-out,
+                            scale 200ms cubic-bezier(.03,.49,.27,1.42);
+            }
+
+            &:hover{
+                .icon-star-fill{
+                    rotate: 360deg;
+                    scale: 1.2; 
+                }
+            } */
+
+            &.hideExtra{
+                .extra-content{
+                    @include hider();
+                }
+
+                .icon-arrow-up{
+                    transform: rotate(180deg) translateX(-0.6cqw) translateY(-0.1cqw);
+                    color: var(--clr-ntral-1);
+                }
+            }
+        }
+    }
+
+
+    .line-separator{
+        position: relative;
+        width: 100%;
+        $size: max(2px, 0.1cqw);
+        height: $size;
+        background-image: linear-gradient(90deg, var(--clr-ntral-2) 0%, #00000000 20%, #00000000 80%, var(--clr-ntral-2) 100%);
+        &::after{
+            content: '';
+            position: absolute;
+            display:block;
+            width: 100%;
+            // top: calc($size * 2);
+            height: $size;
+            background-image: linear-gradient(90deg, #00000000 0%, var(--clr-ntral-2) 40%, var(--clr-ntral-2) 60%, #00000000 100%);
+        }
+    }
+
+}
+
+// === LINK BUTTON ===============================================================================
+
+.content{
+    padding-bottom: 1.5cqw;
+}
+
+.socials{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 0.5cqw 3cqw;
+
+    gap: 2.5cqw;
+
+    margin: 16.5cqw 0 0 0;
+
+    .link-icon{
+
+        display: inline-block;
+        
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+    
+        $size: 14;
+        $sizeMax: 90px; 
+        font-size: max((0.108 * $sizeMax),($size*0.108) * 1cqw);
+        // font-size: 1.4cqw;
+        // min-width: max($sizeMax,$size * 1%);
+        height: max((0.27 * $sizeMax),($size*0.27) * 1cqw);
+        
+        background: none;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: none;
+    
+        $functionBeizer: cubic-bezier(.1,.19,.64,.85);
+        $functionTime: 300ms;
+    
+        text-decoration: none !important;
+    
+        $iconLinkPadding: 0 0.4em;
+    
+        .content{
+            
+            padding: 0;
+            margin: 0;
+    
+            width: 100%;
+            height: 100%;
+    
+            padding: $iconLinkPadding;
+            display: grid;
+            align-items: center;
+    
+            position: relative;
+            color: var(--clr-ntral-1);
+            top: 0;
+            left: 0;
+    
+            font-size: inherit;
+            text-align: center;
+            font-weight: fontWeight('large');
+    
+            border-radius: 0.5cqw;
+    
+            background-color: var(--clr-main-1);
+    
+            // box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+            
+            transition: transform $functionTime $functionBeizer,
+                        box-shadow $functionTime $functionBeizer;
+        }
+    
+        .extrusion{
+            position: absolute;
+            padding: $iconLinkPadding;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5cqw;
+    
+            left: 0;
+            top: 0.2cqw;
+    
+            background-image: linear-gradient(90deg, var(--clr-main-3) , var(--clr-main-1) 15% 85%, var(--clr-main-3) );
+    
+            filter: brightness(65%);
+        }
+    
+        .shadow{
+            position: absolute;
+            padding: $iconLinkPadding;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5cqw;
+    
+            left: 0;
+    
+            top:0.35cqw;
+    
+            background-color: color-mix(in srgb, var(--clr-main-4) 35%, rgba(0, 0, 0, 0.45));
+    
+            transition: transform $functionTime $functionBeizer;
+        }
+    
+        &:hover{
+            $functionBeizer: cubic-bezier(.03,.49,.27,1.42);
+            $functionTime: 220ms;
+    
+            .content{
+                transform: translateY(-0.2cqw);
+                box-shadow: 0 0 0.4cqw var(--clr-glow3), 0 0 1cqw var(--clr-glow1);
+    
+                transition: transform $functionTime $functionBeizer,
+                            box-shadow $functionTime $functionBeizer;
+            }
+            .shadow{
+                transform: translateY(0.35cqw);
+    
+                transition: transform $functionTime $functionBeizer;
+            }
+        }
+    
+        &:active{
+            $functionBeizer: cubic-bezier(.38,.99,.47,1.22);
+            $functionTime: 90ms;
+    
+            .content{
+                transform: translateY(0.08cqw);
+                background-color: var(--clr-main-2);
+                box-shadow: 0 0 0.1cqw var(--clr-glow3), 0 0 0.4cqw var(--clr-glow3);
+    
+                transition: transform $functionTime $functionBeizer,
+                            box-shadow $functionTime $functionBeizer;
+            }
+            .shadow{
+                transform: translateY(-0.05cqw);
+    
+                transition: transform $functionTime $functionBeizer;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesco Plus ⠀•ᴗ• ⠀Theme</title>
+    <link rel="stylesheet" type="text/css" href="./theme-style.css" />
+
+</head>
+<body>
+    
+    <div id="link-list-toggle" class="link-list-toggle">
+        <span id="arrow-toggler" class="icon-arrow-up"></span>
+        <h1 class="title">Gesco Plus</h1>
+    </div>
+    <div id="link-list" class="page-selector">
+    </div>
+
+    <div id="content" class="content">
+    <!-- !!! -->
+        <section aria-label="theme color pickers" class="theme-color-pickers">
+        <div role="container" class="container">
+
+
+            <div class="light-theme-helper hideHelper">
+                    <p>Light Theme Helper</p>
+                    <input type="color" id="head" name="head" value="#000000">
+                    <span id="arrow-helper-toggler" class="icon-arrow-up"></span>
+            </div>
+
+            <div class="info">
+                <h1 class="disclaimer">Informazioni importanti su questa sezione</h1>
+                <p class="disclaimer-desc">
+                    Consiglio di mantenere la luminosità dei colori simile a quella originale, poiché ha un forte impatto sull'aspetto del tema. In ogni caso, 
+                    ho cercato di mettere i colori in scala decrescente; considerate però che se volete creare un tema chiaro (di sfondo), 
+                    la scala va resa crescente e quindi la loro luminosità va completamente invertita.
+                    
+                    <c-br5></c-br5>Se fate qualche macello con il tema e volete tornare a quello normale, 
+                    potete <a href="../../assets/other/themes/defaultTheme.gptheme" download>scaricarlo qui</a> e importarlo.
+
+                    <c-br3></c-br3>Se invece volete fare un tema chiaro potete prendere spunto da <a href="../../assets/other/themes/lightThemeExample.gptheme" download>questo tema</a>, 
+                    nella scelta dei colori puo anche aiutarvi cliccare la freccetta in alto a destra :)
+                </p>
+
+                <div class="actions">
+                    <div class="managing">
+                        <button id="export">
+                            <span class="shadow"></span>
+                            <span class="extrusion"></span>
+                            <span class="content">EXPORT</span>
+                        </button>
+                        <button id="import">
+                            <span class="shadow"></span>
+                            <span class="extrusion"></span>
+                            <span class="content">IMPORT</span>
+                            <form action="./upload" method="post" enctype="multipart/form-data">
+                                <input type="file" name="importedTheme" id="importedTheme" accept=".gptheme">
+                            </form>
+                        </button>
+                    </div>
+                    <div class="editing">
+                        <button id="save">
+                            <span class="shadow"></span>
+                            <span class="extrusion"></span>
+                            <span class="content">SAVE</span>
+                        </button>
+                        <button id="cancel">
+                            <span class="shadow"></span>
+                            <span class="extrusion"></span>
+                            <span class="content">CANCEL</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ! SECTION ! -->
+            <div id="section-separator" class="section-separator">
+
+                <div class="line-separator"></div>
+
+                <div class="info">
+                    <h1 class="section-title">Main Colors</h1>
+                    <p class="section-desc">
+                        I "Main Colors" sono i colori che appaiono più frequentemente nel tema e vengono 
+                        utilizzati nella maggior parte degli elementi non di sfondo (bottoni,link,bordi,icone,etc...)
+                    </p>
+                </div>
+                
+                <div class="pickers-container container">
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-main-3">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Main Color 1</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+        
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-main-1">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Main Color 2</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-main-2">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Main Color 3</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-main-4">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Main Color 4</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- ? -->
+
+            <!-- ! SECTION ! -->
+            <div id="section-separator" class="section-separator">
+
+                <div class="line-separator"></div>
+
+                <div class="info">
+                    <h1 class="section-title">Primary Colors</h1>
+                    <p class="section-desc">
+                        I "Primary Colors" sono i colori utilizzati in ogni sfondo o elemento neutro 
+                    </p>
+                </div>
+                
+                <div class="pickers-container container">
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-primary-4">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Primary Color 1</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+        
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-primary-1">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Primary Color 2</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-primary-2">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Primary Color 3</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-primary-3">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Primary Color 4</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- ? -->
+
+            <!-- ! SECTION ! -->
+            <div id="section-separator" class="section-separator">
+
+                <div class="line-separator"></div>
+
+                <div class="info">
+                    <h1 class="section-title">Neutral Colors</h1>
+                    <p class="section-desc">
+                        I "Neutral Colors" sono colori fondamentali poiché vengono utilizzati per i testi o elementi che svolgono ruoli simili. Ce n'è uno per gli elementi su sfondo scuro e uno per quelli su sfondi chiari. Il terzo colore, invece, è riservato agli elementi che non devono attirare eccessivamente l'attenzione.
+                    </p>
+                </div>
+                
+                <div class="pickers-container container">
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-ntral-1">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Neutral Color 1</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-ntral-3">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Neutral Color 2</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-ntral-2">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Neutral Color 3</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- ? -->
+
+            <!-- ! SECTION ! -->
+            <div id="section-separator" class="section-separator">
+
+                <div class="line-separator"></div>
+
+                <div class="info">
+                    <h1 class="section-title">Glow Colors</h1>
+                    <p class="section-desc">
+                        Come dice il nome, sono i colori utilizzati per gli "effeti di glow", per questione di apparenza devono avere una tonalità simile a quella dei "Main Colors".
+                    </p>
+                </div>
+                
+                <div class="pickers-container container">
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-glow1">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Glow Color 1</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-glow2">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Glow Color 2</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-glow3">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Glow Color 3</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+            <!-- ? -->
+
+            <!-- ! SECTION ! -->
+            <div id="section-separator" class="section-separator">
+
+                <div class="line-separator"></div>
+
+                <div class="info">
+                    <h1 class="section-title">Shadow Colors</h1>
+                    <p class="section-desc">
+                        Questi invece sono i colori utilizzati per le ombre, devo dire che vengono usati molto poco negli elementi ma comunque consiglio di mantenerli su una tonalità simile a quella dei "Main Colors"
+                    </p>
+                </div>
+                
+                <div class="pickers-container container">
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-shadow1">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Shadow Color 1</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-shadow2">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Shadow Color 2</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-shadow3">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Shadow Color 3</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+            <!-- ? -->
+
+            <!-- ! SECTION ! -->
+            <div id="section-separator" class="section-separator">
+
+                <div class="line-separator"></div>
+
+                <div class="info">
+                    <h1 class="section-title">Gesco Colors</h1>
+                    <p class="section-desc">
+                        Questi sono colori più particolari utilizzati solo da certi elementi su gesco (verifiche,supplenze,etc...)
+                    </p>
+                </div>
+
+                <div class="pickers-container container">
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-supplenza">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Supplenza</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-verifica-bkg">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Verifica</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-lezionePassata-bkg">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Lezione fatta</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-lezione-bkg">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Lezione</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-corso-bkg">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Corso</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-sportello-bkg">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Sportello</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+
+                    <div id="color-picker" class="color-picker closed" data-var="--clr-eventoSilly-bkg">
+                        <div role="container" class="picker-area">
+                            <div id="picker-btn" class="picker-btn">
+                                <p id="value" class="color">Evento</p>
+                                <span class="transparent-bkg"></span>
+                                <div id="color-preview" class="preview"></div>
+                            </div>
+                            <div data-color="ff33ffda" id="picker-container" class="picker-container"></div>
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+            <!-- ? -->
+
+        </div>   
+        </section>
+    
+    <!-- !!! -->
+    </div>
+
+    <script type="module" src="../external-page.js"></script> 
+    <script type="module" src="../gesco-plus.js"></script>
+
+    <script type="module" src="../../assets/js/tinycolor.js"></script>
+    <script type="module" src="./theme-script.js"></script>
+</body>
+</html>

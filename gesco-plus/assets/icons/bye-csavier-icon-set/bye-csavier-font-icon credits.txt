@@ -1,0 +1,5 @@
+[ arrow-up ] ->  Author: Element Plus | License: MIT
+[ github ] ->  Author: The Bootstrap Authors | License: MIT
+[ instagram ] ->  Author: Pictogrammers | License: Apache2.0
+[ star ] ->  Author: Phosphor Icons | License: MIT
+

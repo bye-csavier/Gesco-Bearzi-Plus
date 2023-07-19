@@ -1,0 +1,120 @@
+// === VARS ===============================================================================
+
+//^ Other
+
+$font-weights: (
+    "extra-small":200,
+    "small":300,
+    "medium":500,
+    "large":700,
+    "bold":800,
+    "black":900
+);
+
+// === MIXINS ===============================================================================
+
+@mixin centeredFlex($direction){
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: $direction;
+}
+
+@mixin fontSize($size,$zoomable)
+{
+@if $size == 900 {
+    @if $zoomable == true {
+        font-size: clamp(1.5rem, 8vw + 1rem, 5rem);
+    }
+    @else{
+        font-size: clamp(15px, 8vw, 50px);
+    }
+}
+@else if $size == 600 {
+    @if $zoomable == true {
+        font-size: clamp(0.7rem, 5vw + 1rem, 3rem);
+    }
+    @else{
+        font-size: clamp(13px, 5.5vw, 30px);
+    }
+}
+@else if $size == 400 {
+    @if $zoomable == true {
+        font-size: clamp(0.7rem, 1vw + 1rem, 3rem);
+    }
+    @else{
+        font-size: clamp(13px, 1.5vw, 30px);
+    }
+}
+@else if $size == 300 {
+    @if $zoomable == true {
+        font-size: clamp(0.5rem, 0.8vw + 1rem, 2.5rem);
+    }
+    @else{
+        font-size: clamp(0.5rem, 0.8vw, 2.5rem);
+    }
+}
+@else{
+    font-size: clamp(0.5rem, 0.8vw + 1rem, 2.5rem);
+}
+
+}
+
+@mixin transition($ease-type,$version){
+
+@if $ease-type == normal {
+    transition: 600ms ease-in-out;
+} 
+@else if $ease-type == slow-in{
+
+    @if $version == 1 {
+        transition: 1000ms cubic-bezier(.1,.73,.2,.83);
+    } 
+    @else if $version == 2{
+        transition: 1200ms cubic-bezier(.1,.73,.2,.83);
+    }
+    @else{
+        @error "Unknown version: #{$version}.";
+    }
+
+} 
+@else {
+    @error "Unknown ease-type #{$ease-type}.";
+}
+}
+
+@mixin border-box{
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;
+}
+
+@mixin user-select-none{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+
+@mixin hider{
+    // position: absolute !important;
+    // top: -9999px !important;
+    // left: -9999px !important;
+
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0; 
+}
+
+// === FUNCTIONS ===============================================================================
+
+@function fontWeight($weight){
+@return map-get($font-weights,$weight);
+}
+
+// === CLASSES ===============================================================================
+
+.hidden{
+    @include hider();
+}

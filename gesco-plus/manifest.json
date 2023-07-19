@@ -1,8 +1,8 @@
 {
     "name": "Gesco Plus",
-    "version": "0.2.5",
-    "description": "Un'estensione che mira a migliorare gesco",
-    "permissions": ["storage", "tabs","<all_urls>"],
+    "version": "1.0.0",
+    "description": "Un'estensione che mira a migliorare gesco (gesme-ext)",
+    "permissions": ["storage", "tabs","<all_urls>","download"],
     "host_permissions": ["<all_urls>"],
     "background": {
       "service_worker": "background.js"
@@ -11,41 +11,34 @@
       {
         "matches": ["https://gesco.bearzi.it/*"],
         "js": ["contentScript.js"],
-        "css": ["contentStyle.css"]
+        "css": ["contentStyle.css"],
+        "run_at": "document_idle"
       }
     ],
     "web_accessible_resources": [
       {
-        "resources": [
-          "assets/doggybike.png"
-        ],
-        "matches": ["https://gesco.bearzi.it/*"]
-      },
-      {
-        "resources": [
-          "contentStyle.css"
-        ],
-        "matches": ["https://gesco.bearzi.it/*"]
+        "resources": ["*"],
+        "matches": ["<all_urls>"]
       }
     ],
     "icons": {
-        "16": "assets/doggybike.png",
-        "24": "assets/doggybike.png",
-        "32": "assets/doggybike.png",
-        "48": "assets/doggybike.png",
-        "128": "assets/doggybike.png"
+        "16": "assets/img/doggybike.png",
+        "24": "assets/img/doggybike.png",
+        "32": "assets/img/doggybike.png",
+        "48": "assets/img/doggybike.png",
+        "128": "assets/img/doggybike.png"
     },
     "action": {
       "default_icon": {
-        "16": "assets/doggybike.png",
-        "24": "assets/doggybike.png",
-        "32": "assets/doggybike.png",
-        "48": "assets/doggybike.png",
-        "128": "assets/doggybike.png"
+        "16": "assets/img/doggybike.png",
+        "24": "assets/img/doggybike.png",
+        "32": "assets/img/doggybike.png",
+        "48": "assets/img/doggybike.png",
+        "128": "assets/img/doggybike.png"
       },
       "default_title": "Medie Gesco",
-      "default_popup": "popup.html"
+      "default_popup": "./pop-up/popup.html"
     },
     "manifest_version": 3,
-    "options_page":"gesco-plus.html"
+    "options_page":"./gesco-plus/info/gesco-plus.html"
 }

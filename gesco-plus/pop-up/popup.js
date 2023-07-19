@@ -10,6 +10,6 @@ function openOptions() {
     {
         chrome.runtime.openOptionsPage();
     } else {
-        window.open(chrome.runtime.getURL('options.html'));
+        window.open(chrome.runtime.getURL('../gesco-plus/info/gesco-plus.html'));
     }
 }
