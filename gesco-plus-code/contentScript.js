@@ -32,6 +32,12 @@
                     clearTimeout(zoomTimeout);
                     zoomTimeout = null;
                 }.bind(this), 50); */
+
+                let resizeTimeout = setTimeout(function(){
+                    window.dispatchEvent(new Event('resize'));
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = null;
+                }.bind(this), 50);
             }
             }.bind(this);
 

@@ -97,6 +97,18 @@ div:not(.fc-content):not(.fc-time):not(.fc-title){
     color: var(--clr-ntral-1);
 }
 
+/* ? Qualche problema di allineamento rilsto qua  ? */
+
+.fc-row .fc-week .panel-default{
+    margin-right: 5px;
+}
+
+.dataTables_scrollHeadInner{
+    margin: 0 !important;
+}
+
+/* ???? */
+
 hr{
     border-color: transparent;
     background-color: transparent;
@@ -108,14 +120,15 @@ hr{
 }
 
 a{
-    color: var(--clr-main-2);
+    color: var(--clr-main-3);
     transition: 350ms ease-in-out;
 }
 
 a:hover {
-    color: var(--clr-main-3);
+    color: var(--clr-main-2);
     text-decoration: underline;
-    text-shadow: 0 0 0.5rem var(--clr-glow2);
+    cursor: pointer;
+    text-shadow: 0 0 0.5rem var(--clr-glow3);
 
 }
 
@@ -317,6 +330,17 @@ a:hover {
     color: var(--clr-ntral-1);
 }
 
+.btn-group-xs>.btn:is(.btn-default), .btn-xs:is(.btn-default){
+    background-color: var(--clr-main-4);
+    border-color: var(--clr-main-2);
+    color: var(--clr-ntral-1);
+}
+
+.btn-default:is(.btn-default):hover{
+    background-color: var(--clr-main-1);
+    border-color: var(--clr-main-1);
+    color: var(--clr-ntral-1) !important;
+}
 
 .btn-group .fc-calendarsButton-button .btn{
     background-color: var(--clr-main-3) ;
@@ -884,7 +908,7 @@ a.label:focus, a.label:hover{
 .table td,
 .table th{
     -ms-overflow-style: none;
-} */
+} */ 
 
 #calendario-presenze_wrapper .text-right{
     text-align: center !important;

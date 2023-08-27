@@ -1,6 +1,6 @@
 {
     "name": "Gesco Plus",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Un'estensione che mira a migliorare gesco (gesme-ext)",
     "permissions": ["storage", "tabs","<all_urls>","download"],
     "host_permissions": ["<all_urls>"],
