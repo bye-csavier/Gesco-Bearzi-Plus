@@ -17,5 +17,5 @@ L'installazione è molto semplice, seguite questi passaggi:
 - Aprite la sezione *"gestisci estensioni"* sul vostro browser
 - Abilitate la modalita sviluppatore
 - Cliccate su "carica cartella decompressa" *(o simili)*
-- Selezionate la cartella "gesco-plus" *(<-- importante)* 
+- Selezionate la cartella "gesco-plus-code" *(<-- importante)* 
 - fatto 👍, **la cartella è l'estensione, non va eliminata**
