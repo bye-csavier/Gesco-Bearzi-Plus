@@ -150,8 +150,7 @@ document.addEventListener('DOMContentLoaded', function() { //? Attendiamo il car
                 passedRoot.style.setProperty(variable, value);
             }
             else{
-                let root = document.querySelector(':root');
-                root.style.setProperty(variable, value);
+                document.querySelector(':root').style.setProperty(variable, value);
             }
         }
 
