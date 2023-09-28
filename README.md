@@ -1,7 +1,7 @@
-# Gesco Plus 1.1.0
+# Gesco Plus 1.1.3
 
-Questa estensione ha come obbietivo quello di migliorare gesco come sito nel suo complesso, speriamo che il progetto sia mantenuto nei prossimi anni e che possa aiutare gli studenti di tutto il bearzi :)
-⠀
+Questa estensione ha come obbietivo quello di migliorare gesco come sito nel suo complesso.
+Per eventuali **consigli o report bug** potete utilizzare la sezione "Issues" di github o contattarmi in **[privato](https://www.instagram.com/csavi.er/)**
 
 ## Funzionalità aggiunte
 - Medie automatiche
@@ -19,14 +19,3 @@ L'installazione è molto semplice, seguite questi passaggi:
 - Cliccate su "carica cartella decompressa" *(o simili)*
 - Selezionate la cartella "gesco-plus" *(<-- importante)* 
 - fatto 👍, **la cartella è l'estensione, non va eliminata**
-⠀
-
-## Sviluppatori
-
-**[Xavier De Piero](https://instagram.com/csavi.er?igshid=MzRlODBiNWFlZA==)** 
-
-------------
-
-Per eventuali **consigli o report bug** potete utilizzare la sezione "Issues" di github o contattarmi in **[privato](https://www.instagram.com/csavi.er/)**
-
-
