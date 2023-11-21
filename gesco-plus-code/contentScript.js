@@ -11,7 +11,7 @@
             adjustGescoHTML(url);
 
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', chrome.runtime.getURL("./assets/css/gesco-theme-min.css"), true);
+            xhr.open('GET', chrome.runtime.getURL("./assets/css/gesco-theme.css"), true);
 
             xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -99,6 +99,33 @@
             
         }
 
+        if(type === "ELEARNING_THEME")
+        {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', chrome.runtime.getURL("./assets/css/elearning-theme.css"), true);
+
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                
+                let themeHolder = document.createElement('style');
+                themeHolder.innerHTML = xhr.responseText;
+                themeHolder.classList.add("gesco-plus-theme");
+                
+                document.documentElement.append(themeHolder);
+
+                syncGescoPlusRootTheme();
+
+                let resizeTimeout = setTimeout(function(){
+                    window.dispatchEvent(new Event('resize'));
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = null;
+                }.bind(this), 50);
+            }
+            }.bind(this);
+
+            xhr.send();
+        }
+
         
     })
 
@@ -175,6 +202,10 @@ function semplificaNome(nome)
             return "Tecnologie";
         }
 
+        case "Gestione progetto, organiz. d'impresa":{
+            return "GesImp"
+        }
+
         default:{
             return nome;
         }
@@ -183,7 +214,7 @@ function semplificaNome(nome)
 
 function adjustGescoHTML(url){
 
-    if(url.includes("diario"))
+    if((url.replace(/\?.*/, '')).includes("diario")) //https://gesco.bearzi.it/secure/scuola/famiglie/allievo/26619/diario
     {
         const tabella = document.querySelector(".fc-view-container");
 

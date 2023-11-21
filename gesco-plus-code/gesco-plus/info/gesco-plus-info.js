@@ -1,3 +1,5 @@
+import { exist } from "../../assets/js/utilx.js";
+
 document.addEventListener('DOMContentLoaded', function() {
 
     let temp;
@@ -5,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     temp = document.querySelector('#welcome-title h1');
 
     chrome.storage.local.get([`user`]).then((result) => {
-        temp.innerHTML = temp.innerHTML.replace('?usm?',result.user);
+        let daUsername = exist(result.user) == true ? result.user : 'simpaticone';
+        temp.innerHTML = temp.innerHTML.replace('?usm?',daUsername);
     });
 
     let extraLi = document.querySelectorAll('#extra-li');

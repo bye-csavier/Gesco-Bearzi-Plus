@@ -1,7 +1,7 @@
 "use strict";
 
 // import tinycolor from "./tinycolor.js";
-import {TimeTracker, exist, clamp, isValidFunction} from "../../assets/js/utils.js";
+import {TimeTracker, exist, clamp, isValidFunction} from "../../assets/js/utilx.js";
 
 export default class ColorPicker{
 

@@ -1,4 +1,4 @@
-import {exist, sendFileDownload} from '../../assets/js/utils.js'
+import {exist, sendFileDownload} from '../../assets/js/utilx.js'
 import ColorPicker from '../../assets/js/bye-csavier-color-picker.js';
 import {syncGescoPlusRootTheme} from '../gesco-plus.js'
 

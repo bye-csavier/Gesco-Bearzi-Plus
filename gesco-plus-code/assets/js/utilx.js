@@ -64,6 +64,19 @@
 
     //--- Other ---------------------------------------------------------------------------
 
+    export function getJSON(filePath) { //^ Get JSON file content from file
+
+        const request = new XMLHttpRequest();
+        request.open('GET', filePath, false); //? The third parameter sets the request to be synchronous
+        request.send();
+    
+        if (request.status === 200) {
+            return JSON.parse(request.responseText);
+        } else {
+            throw new Error(`Failed to load JSON file from ${filePath}`);
+        }
+    }
+
     export function numberToAlphabet(number) 
     {
         if (number >= 0 && number <= 26) 
@@ -74,6 +87,27 @@
         {
             return "?";
         }
+    }
+
+    export function explodeString(str){
+        return str.split('');
+    }
+
+    /**
+     * replaceInsideStr() takes a string and with a pattern it replaces an precise pattern and a variable
+     * @param str: the string to modify
+     * @param pattern a RegEx pattern were the funcition will replace the (.*?) replacement
+     * @param replacement the string that will used to replace
+     * @returns String
+     */
+    export function replaceInsideStr(str,pattern, replacement){
+
+        let match = str.match(new RegExp(pattern,'g'))[0];
+
+        replacement = pattern.replace(/\(\.\*\?\)/g,replacement);
+        
+        return str.replace(new RegExp(match,'g'), replacement);
+
     }
 
     export function isValidFunction(func) //^ Returns true only if the passed value is a function
@@ -122,7 +156,7 @@
         return true;
     }
 
-    export function toFixed(value,precision,useRound) //^ Similar to the toFixed function but it provides a number and not a string representation of it
+    export function toFixed(value,precision,useRound = true) //^ Similar to the toFixed function but it provides a number and not a string representation of it
     {
         
         let negative = (value<0);
@@ -153,7 +187,7 @@
         {
             return max;
         }
-        return ((Math.random() * ((max+1)-min)) + min);
+        return Math.floor((Math.random() * ((max+1)-min)) + min);
     }
 
     export function getTime(separator) //^ Returns the current time in the format of hours(separator)minutes(separator)seconds. [separator must be a string/char] [Xavier]
@@ -211,7 +245,7 @@
 
     export function invertBool(bool)
     {
-        return (bool == true ? false : true);
+        return (!bool);
     }
 
     export function sendFileDownload(data, fileName, atRemoveCallBack = null)
@@ -247,3 +281,77 @@
             : el[key] = attrs[key]
         );
     }
+
+    export function elFromHtml(html){
+        // document.createRange().createContextualFragment("...").firstElementChild
+        let template = document.createElement('template');
+        template.innerHTML = html;
+        return template.content.firstElementChild;
+    }
+
+/**
+ * Formats value like this -> Performance:  (perf)ms
+ * @param perf: double that holds time value in ms
+ * @param precision default set to 3, the perf value will be fixed the passed precision
+ * @returns String
+ */
+export function perfLogToString(perf, precision = 3)
+{
+	return ("Performance:  " + toFixed(ms, precision) + "ms");
+}
+
+/**
+ * Does a single loop and checks how much time it takes for the passed function to be executed.
+ * It uses performance.now();
+ * @param {*} func The function to test
+ * @param {number} iterations How many time the func will be tested
+ * @param {boolean} cntLog Default false, set to true it will log the iterations counter
+ * @returns {number} The avarage of all records
+*/
+export function perfTest(func,iterations, cntLog = false){
+	let perfs = [];
+	let time;
+	let bigTime = performance.now();
+	
+	let cnt = 0;
+	while(cnt < iterations)
+	{
+		time = performance.now();
+		func();
+		perfs.push(performance.now()-time);
+		cnt++;
+		if(cntLog) console.log(`${cnt}/${iterations}`);
+	}
+	bigTime = (performance.now()-bigTime)/iterations;
+	
+	time = perfs.reduce((a, b) => (a + b)) / iterations;
+	time = (time+bigTime)/2.0;
+	
+	return time;
+}
+
+/**
+ * A more precise way to check the performance of a function
+ * @param {*} func The function to test
+ * @param {number} iterations How many time the func will be tested x sample
+ * @param {number} samples How many times the perfTest will be called
+ * @returns {number} The avarage of all records
+*/
+export function multiPerfTest(func, iterations, samples){
+	let perfs = [];
+	let time = performance.now();
+	
+	let cnt = 0;
+	while(cnt < samples)
+	{
+		perfs.push(perfTest(func, iterations));
+		cnt++;
+	}
+	
+	time = (performance.now()-time)/(samples*iterations);
+	perfs = perfs.reduce((a, b) => (a + b)) / samples;
+	
+	time = (time+perfs)/2.0;
+	
+	return time;
+}

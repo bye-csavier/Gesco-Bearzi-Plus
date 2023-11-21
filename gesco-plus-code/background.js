@@ -34,7 +34,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             }
 
       }
-      
+      /* else if(tab.url.includes("https://elearning.bearzi.it")){
+         chrome.tabs.sendMessage(tabId,{
+            type: "ELEARNING_THEME",
+            url: tab.url
+         })
+      } */
+
    }
 
    async function checkChromeLocalStorageVars()

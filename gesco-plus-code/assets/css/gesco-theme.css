@@ -52,6 +52,11 @@
     --clr-eventoSilly-bkg: #5900ff;
     --clr-eventoSilly-txt: var(--clr-ntral-1);
 
+
+    /* ? Altro ? */
+
+    --clr-border-table: color-mix(in srgb, var(--clr-main-4) 60%, var(--clr-main-3));
+
 }
 
 /* === Generico (Sfondo,Link,Testi,Bottoni,etc...) =============================================================================== */
@@ -68,7 +73,7 @@ body{
 /* width */
 ::-webkit-scrollbar {
     width: clamp(6px,0.4vw,40px);
-   
+    height: clamp(6px,0.4vw,40px);
 }
 
 /* Track */
@@ -92,10 +97,10 @@ body{
                 0 0 1rem var(--clr-shadow2);
 }
 
-p, li, td, h1, h2, h3, h4, h5, label,
-div:not(.fc-content):not(.fc-time):not(.fc-title){
+p, li, td, h1, h2, h3, h4, h5, label, .dataTables_info{
     color: var(--clr-ntral-1);
 }
+/* ,div:not(.fc-content):not(.fc-time):not(.fc-title) */
 
 /* ? Qualche problema di allineamento rilsto qua  ? */
 
@@ -632,6 +637,11 @@ ul.nav.nav-pills.nav-stacked i{
     }
 }
 
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+    background-color: var(--clr-main-4);
+    color: var(--clr-ntral-1) !important;
+}
+
 /* --- Tabbella diario (colore eventi) ------------------------------------------------------------------ */
 
 .gesme-compito{
@@ -732,7 +742,16 @@ ul.nav.nav-pills.nav-stacked i{
 .table-bordered>tfoot>tr>th, 
 .table-bordered>thead>tr>td, 
 .table-bordered>thead>tr>th{
-    border-color: var(--clr-ntral-1);
+    
+    border-color: var(--clr-border-table);
+}
+
+.panel-default{
+    border-color: transparent;
+}
+
+.table-bordered{
+    border-color: var(--clr-border-table) !important;
 }
 
 .table-bordered th{
@@ -857,7 +876,8 @@ a.label:focus, a.label:hover{
 }
 
 .DTFC_LeftBodyWrapper{
-    border: 1px solid var(--clr-ntral-1);
+    border: 1px solid var(--clr-border-table);
+    color: var(--clr-border-table) !important;
     border-top: 0;
     border-bottom: 0;
     border-left: 0;
