@@ -1,4 +1,4 @@
-# Gesco Plus 1.1.3
+# Gesco Plus 1.2.0
 
 Questa estensione ha come obbietivo quello di migliorare gesco come sito nel suo complesso.  
 Per eventuali **consigli o report bug** potete utilizzare la sezione contattarmi in **[privato](https://www.instagram.com/csavi.er/)**
